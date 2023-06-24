@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        
+        <variable
+            name="viewmodel"
+            type="com.jindvir.mvvmauthentication.ui.auth.AuthViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#F6F7FB"
+        android:orientation="vertical"
+        tools:context=".ui.auth.LoginPage">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bebas_neue"
+            android:text="MVVM"
+            android:textColor="@color/_dark_purple"
+            android:textSize="36sp" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewmodel.email}"
+            android:layout_marginStart="@dimen/margin_start_edittext"
+            android:layout_marginEnd="@dimen/margin_start_edittext"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/et_background"
+            android:hint="@string/email"
+            android:textColorHint="@color/light_purple_et"
+            android:padding="12dp"
+            android:elevation="6dp"
+            android:layout_marginTop="12dp"
+            android:outlineSpotShadowColor="@color/shadow_ambiet_et"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewmodel.password}"
+            android:layout_marginStart="@dimen/margin_start_edittext"
+            android:layout_marginEnd="@dimen/margin_start_edittext"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/et_background"
+            android:hint="@string/password"
+            android:textColorHint="@color/light_purple_et"
+            android:padding="12dp"
+            android:elevation="6dp"
+            android:layout_marginTop="12dp"
+            android:outlineSpotShadowColor="@color/shadow_ambiet_et"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_margin="32dp"
+            android:background="@drawable/et_background"
+            android:onClick="@{viewmodel::onLoginButtonClick}"/>
+
+
+
+    </LinearLayout>
+
+</layout>
